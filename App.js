@@ -1,14 +1,30 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import Heading from './components/text/Heading';
+import SubHeading from './components/text/SubHeading';
 
-export default class App extends React.Component {
+export default class App extends Component {
+  state = {
+    mode: 'menu'
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <Heading>Teacher's Pet</Heading>
+        <SubHeading>Tools of teachers</SubHeading>
+        <Text>{this.state.mode}</Text>
+        <Button
+          onPress={this.setMode('grade')}
+          title="Grading Ruler"
+          color="#841584"
+          accessibilityLabel="Go to the grading ruler"
+        />
       </View>
     );
   }
+
+  setMode = (string) = () => this.setState({ mode: string })
 }
 
 const styles = StyleSheet.create({
