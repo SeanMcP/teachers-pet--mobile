@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
+import GradeView from './views/GradeView';
 import HomeView from './views/HomeView';
 
 export default class App extends Component {
@@ -19,7 +20,8 @@ export default class App extends Component {
         const { mode } = this.state;
         
         const viewHash = {
-            home: <HomeView/>
+            grade: GradeView,
+            home: HomeView
         }
 
         const Component = viewHash[
