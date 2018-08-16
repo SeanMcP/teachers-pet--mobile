@@ -8,3 +8,10 @@
 
 - ⚛️ React Native
 - 📱 Expo
+
+## Apps:
+
+- 🐱 Grading Ruler
+- 🐶 Group Maker
+- 🤖 Timer
+- 🔮 TBD
