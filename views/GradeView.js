@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import ViewHeaderLayout from '../components/layout/ViewHeaderLayout';
 
 export default class GradeView extends Component {
@@ -10,7 +10,7 @@ export default class GradeView extends Component {
                 title="Grading Ruler"
             >
                 <View style={styles.container}>
-                    Hello from GradeView!
+                    <Text>Hello from GradeView!</Text>
                 </View>
             </ViewHeaderLayout>
         );
@@ -19,6 +19,6 @@ export default class GradeView extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        display: 'grid',
+        display: 'flex',
     },
 });

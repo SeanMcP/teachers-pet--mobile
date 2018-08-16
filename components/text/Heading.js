@@ -2,12 +2,14 @@ import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 
 export default Heading = ({ children, ...rest }) => (
-    <Text style={styles} {...rest}>
+    <Text style={styles.heading} {...rest}>
         {children}
     </Text>
 )
 
 const styles = StyleSheet.create({
-    fontSize: 40,
-    fontWeight: 'bold'
+    heading: {
+        fontSize: 40,
+        fontWeight: 'bold',
+    },
 })

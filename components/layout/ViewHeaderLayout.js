@@ -1,14 +1,14 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import Heading from '../components/text/Heading';
-import Icon from '../components/atomic/Icon';
+import Heading from '../text/Heading';
+import Icon from '../atomic/Icon';
 
 export default ViewHeaderLayout = (props) => (
     <View style={styles.container}>
         <View style={styles.header}>
             <Icon
                 color="white"
-                name="arrow-back"
+                name="md-arrow-back"
                 onPress={props.handleBack}
             />
             <Heading>
@@ -21,15 +21,10 @@ export default ViewHeaderLayout = (props) => (
 
 const styles = StyleSheet.create({
     container: {
-        display: grid,
-        gridGap: '1rem',
-        gridTemplateRows: 'min-content 1fr',
+        display: 'flex',
     },
     header: {
-        background: 'navy',
-        color: 'white',
-        display: grid,
-        gridGap: '1rem',
-        gridTemplateColumns: 'min-content 1fr',
-    }
+        backgroundColor: 'navy',
+        display: 'flex',
+    },
 })

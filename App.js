@@ -4,8 +4,15 @@ import GradeView from './views/GradeView';
 import HomeView from './views/HomeView';
 
 export default class App extends Component {
-    state = {
-        mode: 'home'
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            mode: 'home'
+        }
+
+        this.renderView = this.renderView.bind(this);
+        this.setMode = this.setMode.bind(this);
     }
 
     render() {
@@ -16,7 +23,7 @@ export default class App extends Component {
         );
     }
 
-    renderView = () => {
+    renderView() {
         const { mode } = this.state;
         
         const viewHash = {
@@ -31,7 +38,9 @@ export default class App extends Component {
         return <Component handleSetMode={this.setMode} />;
     }
 
-    setMode = (string) = () => this.setState({ mode: string })
+    setMode(string) {
+        return () => this.setState({ mode: string })
+    }
 }
 
 const styles = StyleSheet.create({

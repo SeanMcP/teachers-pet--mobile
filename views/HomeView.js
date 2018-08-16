@@ -12,6 +12,7 @@ export default HomeView = (props) => {
             />
         ));
     }
+    
     return (
         <View style={styles.container}>
             <Heading>Teacher's Pet</Heading>
@@ -52,12 +53,9 @@ const buttons = [
 
 const styles = StyleSheet.create({
     buttonContainer: {
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gridGap: '1rem',
+        display: 'flex',
     },
     container: {
-        display: 'grid',
-        gridGap: '1rem',
+        display: 'flex',
     },
 });
