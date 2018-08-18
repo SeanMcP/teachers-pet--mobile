@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Input, StyleSheet, View } from 'react-native';
-import PropTypes from 'prop-types';
 
 export default GradeHeader = (props) => (
     <View style={styles.container}>
@@ -23,13 +22,6 @@ export default GradeHeader = (props) => (
         />
     </View>
 )
-
-GradeHeader.propTypes = {
-    handleChange: PropTypes.func.isRequired,
-    handleClick: PropTypes.func.isRequired,
-    placesValue: PropTypes.number.isRequired,
-    problemsValue: PropTypes.number.isRequired
-}
 
 const styles = StyleSheet.create({
     container: {}
