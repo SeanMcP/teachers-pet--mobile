@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Input, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import GradeBody from '../components/grade/GradeBody';
 import GradeHeader from '../components/grade/GradeHeader';
 import ViewHeaderLayout from '../components/layout/ViewHeaderLayout';
 
@@ -8,9 +9,9 @@ export default class GradeView extends Component {
         super(props);
 
         this.state = {
-            numberOfDecimalPlaces: 0,
-            numberOfProblems: null,
-            problemOptions: [],
+            decimalPlaces: '',
+            options: [],
+            problems: '',
         }
 
         this.handleClick = this.handleClick.bind(this);
@@ -27,8 +28,12 @@ export default class GradeView extends Component {
                     <GradeHeader
                         handleChange={this.handleInputChange}
                         handleClick={this.handleClick}
-                        placesValue={this.state.numberOfDecimalPlaces}
-                        problemsValue={this.state.numberOfProblems}
+                        placesValue={this.state.decimalPlaces}
+                        problemsValue={this.state.problems}
+                    />
+                    <GradeBody
+                        options={this.state.options}
+                        places={this.state.decimalPlaces}
                     />
                 </View>
             </ViewHeaderLayout>
@@ -36,7 +41,7 @@ export default class GradeView extends Component {
     }
 
     handleClick() {
-        let number = this.state.numberOfProblems
+        let number = Number(this.state.problems);
         const options = [];
 
         while (number >= 0) {
@@ -44,11 +49,11 @@ export default class GradeView extends Component {
             number--;
         }
 
-        this.setState({ problemOptions: options });
+        this.setState({ options: options });
     }
 
-    handleInputChange(e) {
-        this.setState({ [e.target.name]: e.target.value });
+    handleInputChange(key, value) {
+        this.setState({ [key]: value });
     }
 }
 

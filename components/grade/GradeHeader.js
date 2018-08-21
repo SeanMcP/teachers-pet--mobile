@@ -1,17 +1,17 @@
 import React from 'react';
-import { Button, Input, StyleSheet, View } from 'react-native';
+import { Button, StyleSheet, TextInput, View } from 'react-native';
 
 export default GradeHeader = (props) => (
     <View style={styles.container}>
-        <Input
-            name="numberOfProblems"
-            onChange={props.handleChange}
+        <TextInput
+            keyboardType="numeric"
+            onChangeText={(text) => props.handleChange('problems', text)}
             placeholder="Number of problems"
             value={props.problemsValue}
         />
-        <Input
-            name="numberOfDecimalPlaces"
-            onChange={props.handleChange}
+        <TextInput
+            keyboardType="numeric"
+            onChangeText={(text) => props.handleChange('decimalPlaces', text)}
             placeholder="Number of decimal places"
             value={props.placesValue}
         />
@@ -24,5 +24,7 @@ export default GradeHeader = (props) => (
 )
 
 const styles = StyleSheet.create({
-    container: {}
+    container: {
+        display: 'flex'
+    }
 })

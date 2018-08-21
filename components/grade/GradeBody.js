@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import GradeDirections from './GradeDirections';
+import GradeTable from './GradeTable';
 
 export default GradeBody = (props) => (
     <View style={styles.container}>
