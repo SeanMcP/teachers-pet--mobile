@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import Heading from '../text/Heading';
 import Icon from '../atomic/Icon';
+import { COLOR } from '../../constants';
 
 export default ViewHeaderLayout = (props) => (
     <View style={styles.container}>
@@ -22,9 +23,11 @@ export default ViewHeaderLayout = (props) => (
 const styles = StyleSheet.create({
     container: {
         display: 'flex',
+        width: '100vw'
     },
     header: {
-        backgroundColor: 'navy',
+        alignSelf: 'stretch',
+        backgroundColor: COLOR.blue800,
         display: 'flex',
     },
 })
