@@ -14,4 +14,4 @@
 - 🐱 Grading Ruler
 - 🐶 Group Maker
 - 🤖 Timer
-- 🔮 TBD
+- 🐵 Random Generator
