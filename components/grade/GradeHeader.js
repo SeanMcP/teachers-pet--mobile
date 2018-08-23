@@ -3,20 +3,20 @@ import {
     Button,
     Keyboard,
     StyleSheet,
-    TextInput,
     View
 } from 'react-native';
+import Input from '../atomic/Input';
 
 export default GradeHeader = (props) => (
     <View style={styles.container}>
-        <TextInput
+        <Input
             keyboardType="numeric"
             onChangeText={(text) => props.handleChange('problems', text)}
             onSubmitEditing={Keyboard.dismiss}
             placeholder="Number of problems"
             value={props.problemsValue}
         />
-        <TextInput
+        <Input
             keyboardType="numeric"
             onChangeText={(text) => props.handleChange('decimalPlaces', text)}
             onSubmitEditing={Keyboard.dismiss}
