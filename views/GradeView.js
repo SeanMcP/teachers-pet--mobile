@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Keyboard, StyleSheet, View } from 'react-native';
 import GradeBody from '../components/grade/GradeBody';
 import GradeHeader from '../components/grade/GradeHeader';
 import ViewHeaderLayout from '../components/layout/ViewHeaderLayout';
@@ -49,7 +49,7 @@ export default class GradeView extends Component {
             number--;
         }
 
-        this.setState({ options: options });
+        this.setState({ options: options }, Keyboard.dismiss);
     }
 
     handleInputChange(key, value) {
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     container: {
         display: 'flex',
         flex: 1,
-        padding: 10,
+        padding: 16,
         width: '100%',
     },
 });

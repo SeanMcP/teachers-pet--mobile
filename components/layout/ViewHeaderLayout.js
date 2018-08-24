@@ -31,14 +31,14 @@ const styles = StyleSheet.create({
         backgroundColor: COLOR.blue500,
         display: 'flex',
         flexDirection: 'row',
-        padding: 10,
+        padding: 16,
         width: '100%',
     },
     heading: {
         color: 'white',
         fontSize: 20,
         flex: 1,
-        marginRight: 30,
+        marginRight: 32,
         textAlign: 'center',
     },
 })
