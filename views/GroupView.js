@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Keyboard, StyleSheet, View } from 'react-native';
+import GroupBody from '../components/group/GroupBody';
 import GroupHeader from '../components/group/GroupHeader';
 import ViewHeaderLayout from '../components/layout/ViewHeaderLayout';
 
@@ -32,6 +33,13 @@ export default class GroupView extends Component {
                         perGroupValue={this.state.perGroup}
                         totalValue={this.state.total}
                     />
+                    {this.state.displayGroups ? (
+                        <GroupBody
+                            groupsValue={this.state.groups}
+                            perGroupValue={this.state.perGroup}
+                            totalValue={this.state.total}
+                        />
+                    ) : null}
                 </View>
             </ViewHeaderLayout>
         );
