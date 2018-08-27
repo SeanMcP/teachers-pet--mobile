@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Keyboard, StyleSheet, View } from 'react-native';
 import GroupHeader from '../components/group/GroupHeader';
 import ViewHeaderLayout from '../components/layout/ViewHeaderLayout';
 
@@ -38,7 +38,7 @@ export default class GroupView extends Component {
     }
 
     handleClick() {
-        this.setState({ displayGroups: true });
+        this.setState({ displayGroups: true }, Keyboard.dismiss);
     }
 
     handleInputChange(key, value) {
