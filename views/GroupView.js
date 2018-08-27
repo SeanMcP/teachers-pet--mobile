@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
+import GroupHeader from '../components/group/GroupHeader';
 import ViewHeaderLayout from '../components/layout/ViewHeaderLayout';
 
 export default class GroupView extends Component {
@@ -7,10 +8,14 @@ export default class GroupView extends Component {
         super(props);
 
         this.state = {
+            displayGroups: false,
             groups: '',
             perGroup: '',
             total: '',
         }
+
+        this.handleClick = this.handleClick.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     render() {
@@ -20,9 +25,24 @@ export default class GroupView extends Component {
                 title="Group Maker"
             >
                 <View style={styles.container}>
+                    <GroupHeader
+                        handleChange={this.handleInputChange}
+                        handleClick={this.handleClick}
+                        groupsValue={this.state.groups}
+                        perGroupValue={this.state.perGroup}
+                        totalValue={this.state.total}
+                    />
                 </View>
             </ViewHeaderLayout>
         );
+    }
+
+    handleClick() {
+        this.setState({ displayGroups: true });
+    }
+
+    handleInputChange(key, value) {
+        this.setState({ [key]: value });
     }
 }
 
