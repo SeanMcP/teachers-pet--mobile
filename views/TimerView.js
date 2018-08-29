@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, StyleSheet, View } from 'react-native';
-import ViewHeaderLayout from '../layout/ViewHeaderLayout';
+import Timer from '../components/timer/Timer';
+import ViewHeaderLayout from '../components/layout/ViewHeaderLayout';
 
 export default class TimerView extends Component {
     constructor(props) {
@@ -18,6 +19,7 @@ export default class TimerView extends Component {
                 title="Timer"
             >
                 <View style={styles.container}>
+                    <Timer timeInSec={61} />
                     <Button
                         onPress={() => null}
                         title="Add timer"
