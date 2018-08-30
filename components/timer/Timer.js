@@ -36,15 +36,21 @@ export default class Timer extends Component {
         )
     }
 
+    forceTwoDigits(num) {
+        let output = num;
+        if (output.toString().length < 2) output = `0${output}`;
+        return output;
+    }
+
     formatTime(seconds) {
         let hour, min, sec;
-        if (seconds > 3600) {
+        if (seconds >= 3600) {
             hour = Math.floor(seconds / 3600);
-            min = Math.floor((seconds - hour * 3600) / 60);
-            sec = seconds - (hour * 3600) - (min * 60);
-        } else if (seconds > 60) {
-            hour = Math.floor(seconds / 60)
-            sec = seconds - (min * 60);
+            min = this.forceTwoDigits(Math.floor((seconds - hour * 3600) / 60));
+            sec = this.forceTwoDigits(seconds - (hour * 3600) - (min * 60));
+        } else if (seconds >= 60) {
+            min = Math.floor(seconds / 60)
+            sec = this.forceTwoDigits(seconds - (min * 60));
         }
 
         return (
@@ -58,7 +64,7 @@ export default class Timer extends Component {
 
     reset() {
         this.stop();
-        this.setState({ timeInSec: this.props.time });
+        this.setState({ timeInSec: this.props.timeInSec });
     }
 
     start() {
