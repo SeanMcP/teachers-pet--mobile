@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, StyleSheet, View } from 'react-native';
+import BasicModal from '../components/common/BasicModal';
 import Timer from '../components/timer/Timer';
 import ViewHeaderLayout from '../components/layout/ViewHeaderLayout';
 
@@ -24,6 +25,7 @@ export default class TimerView extends Component {
                         onPress={() => null}
                         title="Add timer"
                     />
+                    <BasicModal />
                 </View>
             </ViewHeaderLayout>
         )
