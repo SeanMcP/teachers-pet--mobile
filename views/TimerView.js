@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import Modal from '../components/common/Modal';
 import Timer from '../components/timer/Timer';
+import TimerCreator from '../components/timer/TimerCreator';
 import ViewHeaderLayout from '../components/layout/ViewHeaderLayout';
 
 export default class TimerView extends Component {
@@ -33,15 +34,7 @@ export default class TimerView extends Component {
                         close={this.modalClose}
                         isOpen={this.state.displayModal}
                     >
-                        {close => (
-                            <View>
-                                <Text>I am inside the modal!</Text>
-                                <Button
-                                    onPress={close}
-                                    title="Close"
-                                />
-                            </View>
-                        )}
+                        <TimerCreator />
                     </Modal>
                 </View>
             </ViewHeaderLayout>
