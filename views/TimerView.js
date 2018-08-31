@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
-import BasicModal from '../components/common/BasicModal';
+import Modal from '../components/common/Modal';
 import Timer from '../components/timer/Timer';
 import ViewHeaderLayout from '../components/layout/ViewHeaderLayout';
 
@@ -29,7 +29,7 @@ export default class TimerView extends Component {
                         onPress={this.modalOpen}
                         title="Add timer"
                     />
-                    <BasicModal
+                    <Modal
                         close={this.modalClose}
                         isOpen={this.state.displayModal}
                     >
@@ -42,7 +42,7 @@ export default class TimerView extends Component {
                                 />
                             </View>
                         )}
-                    </BasicModal>
+                    </Modal>
                 </View>
             </ViewHeaderLayout>
         )

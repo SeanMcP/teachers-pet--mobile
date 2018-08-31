@@ -1,13 +1,13 @@
 import React from 'react';
-import { Modal } from 'react-native';
+import { Modal as ReactNativeModal } from 'react-native';
 
-export default BasicModal = (props) => (
-    <Modal
+export default Modal = (props) => (
+    <ReactNativeModal
         animationType="slide"
         onRequestClose={props.close}
         transparent={false}
         visible={props.isOpen}
     >
         {props.children(props.close)}
-    </Modal>
+    </ReactNativeModal>
 );
