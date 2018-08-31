@@ -8,9 +8,6 @@ export default Modal = (props) => (
         transparent={false}
         visible={props.isOpen}
     >
-        {
-            React.Children.map(props.children, child =>
-                React.cloneElement(child, { close: props.close }))
-        }
+        {React.cloneElement(props.children, { close: props.close })}
     </ReactNativeModal>
 )
