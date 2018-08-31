@@ -1,46 +1,14 @@
-import React, {Component} from 'react';
-import { Modal, Text, TouchableHighlight, View } from 'react-native';
+import React from 'react';
+import { Modal, View } from 'react-native';
 
-export default class BasicModal extends Component {
-  state = {
-    modalVisible: false,
-  };
-
-  setModalVisible(visible) {
-    this.setState({modalVisible: visible});
-  }
-
-  render() {
-    return (
-      <View style={{marginTop: 22}}>
+export default BasicModal = (props) => (
+    <View style={{ marginTop: 22 }}>
         <Modal
-          animationType="slide"
-          transparent={false}
-          visible={this.state.modalVisible}
-          onRequestClose={() => {
-            alert('Modal has been closed.');
-          }}>
-          <View style={{marginTop: 22}}>
-            <View>
-              <Text>Hello World!</Text>
-
-              <TouchableHighlight
-                onPress={() => {
-                  this.setModalVisible(!this.state.modalVisible);
-                }}>
-                <Text>Hide Modal</Text>
-              </TouchableHighlight>
-            </View>
-          </View>
+            animationType="slide"
+            transparent={false}
+            visible={props.isOpen}
+        >
+            {props.children(props.close)}
         </Modal>
-
-        <TouchableHighlight
-          onPress={() => {
-            this.setModalVisible(true);
-          }}>
-          <Text>Show Modal</Text>
-        </TouchableHighlight>
-      </View>
-    );
-  }
-}
+    </View>
+);
